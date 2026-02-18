@@ -1,20 +1,21 @@
 # Student Result Manager (CLI)
 
 ## Overview
-This is a **Command-Line Interface (CLI) Python project** that allows users to manage student records efficiently. The program lets you add students, record their grades, view individual student results, and view all students at once.  
+This is a Python Command-Line Interface (CLI) project that allows users to manage student records efficiently. The program enables adding students, recording subject grades, viewing individual student results, and listing all students.
 
-It is designed as a simple, interactive terminal application, ideal for learning Python basics such as **functions, dictionaries, loops, and user input**.
+The project demonstrates core Python concepts including functions, loops, dictionaries, and user input handling.
 
 ## Features
-- **Add Student:** Enter a student ID and name to store a new student.  
-- **Add Grade:** Assign a grade for a specific subject to an existing student.  
-- **View Student:** Display the name and grades of a particular student.  
-- **View All Students:** List all registered students.  
-- **Exit:** Quit the program safely.  
+- Add new students using a unique student ID
+- Add subject grades for existing students
+- View individual student records
+- View all registered students
+- Interactive menu-driven CLI system
 
 ## How to Run
-1. Clone the repository or download `main.py`.  
-2. Open it in a Python environment that supports `input()` and `print()` (e.g., Pyto, Carnets, or any desktop Python IDE).  
-3. Run the script:  
+1. Download or clone the repository.
+2. Open the file in a Python environment that supports input and print.
+3. Run the script:
+
    ```bash
-   python main.py
+   python student_result_manager.py
