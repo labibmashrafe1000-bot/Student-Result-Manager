@@ -19,3 +19,21 @@ The project demonstrates core Python concepts including functions, loops, dictio
 
    ```bash
    python student_result_manager.py
+   ```
+## Example Interaction                
+```
+Enter student ID: 123
+Enter student name: Labib
+Add grade for Math: 95
+View student record
+Name: Labib
+Math: 95
+```
+## Skills Demonstrated                  
+   - Python fundamentals: functions,  loops, dictionaries
+   - CLI design and user input handling
+   - Basic data management and simple algorithms
+   - Writing interactive terminal applications
+
+## License                            
+     This project is licensed under the MIT License 
