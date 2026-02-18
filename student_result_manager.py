@@ -1,45 +1,68 @@
-students = {}  # stores all students
+# Student Result Manager CLI
+
+students = {}
 
 def add_student():
     student_id = input("Enter student ID: ")
     name = input("Enter student name: ")
-    students[student_id] = {"name": name, "grades": {}}
-    print(f"Student {name} added!")
+    
+    if student_id in students:
+        print("Student ID already exists!")
+    else:
+        students[student_id] = {
+            "name": name,
+            "grades": {}
+        }
+        print(f"Student {name} added successfully!")
 
 def add_grade():
     student_id = input("Enter student ID: ")
+    
     if student_id not in students:
         print("Student not found!")
         return
+    
     subject = input("Enter subject: ")
     grade = input("Enter grade: ")
+    
     students[student_id]["grades"][subject] = grade
     print(f"Grade added for {students[student_id]['name']}")
 
 def view_student():
     student_id = input("Enter student ID: ")
+    
     if student_id not in students:
         print("Student not found!")
         return
+    
     student = students[student_id]
-    print(f"Name: {student['name']}")
+    print(f"\nName: {student['name']}")
     print("Grades:")
-    for subject, grade in student["grades"].items():
-        print(f"  {subject}: {grade}")
+    
+    if not student["grades"]:
+        print("  No grades recorded.")
+    else:
+        for subject, grade in student["grades"].items():
+            print(f"  {subject}: {grade}")
 
 def view_all_students():
-    for student_id, student in students.items():
-        print(f"{student_id} - {student['name']}")
+    if not students:
+        print("No students added yet.")
+    else:
+        for student_id, info in students.items():
+            print(f"{student_id} - {info['name']}")
 
 def main():
     while True:
-        print("\n1. Add student")
+        print("\n--- Student Result Manager ---")
+        print("1. Add student")
         print("2. Add grade")
         print("3. View student")
         print("4. View all students")
         print("5. Exit")
+        
         choice = input("Enter choice: ")
-
+        
         if choice == "1":
             add_student()
         elif choice == "2":
@@ -49,9 +72,10 @@ def main():
         elif choice == "4":
             view_all_students()
         elif choice == "5":
+            print("Exiting program.")
             break
         else:
-            print("Invalid choice!")
+            print("Invalid choice. Please try again.")
 
 if __name__ == "__main__":
     main()
